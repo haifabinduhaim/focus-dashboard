@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    
+    /* أسطر الخلفية */
+    background-image: url('Screenshot\ 2026-05-19\ 102759.png'); /* تأكد من اسم ملف صورتك */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* أسطر الـ Grid */
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: 40px;
+    justify-items: center;
+    align-content: center;
+    
+    /* خط عام للموقع */
+    font-family: sans-serif;
+}
+
+/* تنسيق الزر الرئيسي للمنيو */
+.dropdown-btn {
+    background-color: #1e293b;
+    color: #38bdf8; /* لون برمجاني */
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تأثير بسيط لما نمرر الماوس على الزر نفسه */
+.dropdown-btn:hover {
+    background-color: #334155;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* الحاوية الأساسية - جعلناها relative لتكون مرجعاً للقائمة المنسدلة */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* القائمة المنسدلة (المحتوى المخفي) */
+.dropdown-content {
+    display: none;          /* مخفية في البداية */
+    position: absolute;     /* تطفو فوق العناصر */
+    background-color: rgba(15, 23, 42, 0.95); /* خلفية داكنة شفافة قليلاً */
+    min-width: 160px;       /* أقل عرض للقائمة */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.5); /* ظل يعطي إيحاء بالعمق والارتفاع */
+    border-radius: 8px;
+    border: 1px solid #334155;
+    z-index: 1;             /* للتأكد أنها تظهر فوق أي عنصر آخر */
+    top: 100%;              /* مسافة تنزلها تحت الزر الرئيسي بقليل */
+}
+
+/* تنسيق الروابط داخل القائمة المنسدلة */
+.dropdown-content a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;         /* تجعل كل رابط يأخذ سطر كامل تحت الثاني */
+    transition: background 0.2s;
+}
+
+/* تغيير خلفية الرابط داخل المنيو عند مرور الماوس عليه */
+.dropdown-content a:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+/* السحر الحقيقي: إظهار القائمة المنسدلة عند مرور الماوس على حاوية الـ dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* 1. الحاوية الكبيرة للمؤقت (الصندوق الزجاجي) */
+.timer-container {
+    background-color: rgba(30, 41, 59, 0.7); /* لون داكن مع شفافية 70% */
+    backdrop-filter: blur(10px);            /* تأثير الغبش على الخلفية الزجاجية */
+    padding: 30px;                          /* مساحة داخلية مريحة حول العناصر */
+    border-radius: 16px;                    /* حواف دائرية ناعمة للصندوق */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* إطار نحيف جداً يعطي لمعة الزجاج */
+    text-align: center;                     /* توسيط كل شيء داخل الصندوق */
+}
+
+/* 2. شاشة عرض الأرقام */
+#display {
+    font-size: 4rem;              /* حجم خط كبير جداً وواضح للأرقام */
+    font-weight: bold;            /* جعل الأرقام عريضة */
+    font-family: monospace;       /* خط برمجاني ثابت العرض (عشان الأرقام ما تتحرك وتتراقص أثناء العد) */
+    color: #f7fbfc;               /* لون وردي/أحمر محفز للتركيز */
+    margin-bottom: 20px;          /* مسافة بين الأرقام والأزرار اللي تحتها */
+}
+
+/* 3. حاوية الأزرار (Controls) */
+.controls {
+    display: flex;                /* جعل الأزرار بجانب بعضها بمرونة */
+    gap: 10px;                    /* مسافة 10 بكسل بين كل زر والثاني */
+    justify-content: center;      /* توسيط الأزرار أفقياً */
+}
+
+/* 4. تنسيق الأزرار نفسها (Start, Stop, Reset) */
+.controls button {
+    background-color: #334155;    /* لون أزرار رمادي غامق مريح للعين */
+    color: #38bdf8;                 /* لون النص داخل الزر */
+    border: none;                 /* إزالة الإطار الافتراضي البشع للزر */
+    padding: 10px 20px;           /* مسافة داخلية للزر (10 فوق وتحت، 20 يمين ويسار) */
+    border-radius: 8px;           /* حواف دائرية للأزرار تناسب الصندوق */
+    cursor: pointer;              /* تحويل الماوس ليد عند الوقوف على الزر */
+    font-weight: bold;            /* نص عريض */
+    transition: background 0.2s;  /* حركة ناعمة عند تغير اللون */
+}
+
+/* 5. تأثير عند مرور الماوس فوق الأزرار */
+.controls button:hover {
+    background-color: #475569;    /* يفتح لون الزر قليلاً ليعطي إيحاء بالتفاعل */
+}
+#quote{
+    color: rgb(73, 201, 201);
+    backdrop-filter: blur(10px);            /* تأثير الغبش على الخلفية الزجاجية */
+    padding: 30px;                          /* مساحة داخلية مريحة حول العناصر */
+    border-radius: 16px;                    /* حواف دائرية ناعمة للصندوق */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* إطار نحيف جداً يعطي لمعة الزجاج */
+    text-align: center;                     /* توسيط كل شيء داخل الصندوق */
+}
+.quote-container {
+    color: rgb(97, 211, 211);
+    text-align: left;                 
+}

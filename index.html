@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <nav class="navbar">
+    <div class="dropdown">
+        <button class="dropdown-btn">My Dev Links ▼</button>
+        <div class="dropdown-content">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+            <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+        </div>
+    </div>
+</nav>
+    
+     <section class="timer-section">
+      <div class="timer-container">
+  <div id="display">00:00:00</div>
+  <div class="controls">
+    <button id="start-btn">Start</button> <!-- Calls the tTimer function when clicked -->
+    <button id="stop-btn">Stop</button>
+    <button id="reset-btn">Reset</button>
+  </div>
+</div>
+
+    </section>
+    <!-- Quote content goes here from API in javascript fetch -->
+     <section class="quote-section">
+        <div class="quote-container">
+    <div id="quote"><p>Quote will appear here</p>
+     <div id ="author">Author will appear here</div></div>
+   
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
